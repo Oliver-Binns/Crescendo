@@ -15,6 +15,7 @@
 		5D56E895262785FA008415EB /* Crescendo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D56E894262785FA008415EB /* Crescendo.xcassets */; };
 		7C24289F2B3DA5CA00EAC0CF /* PlaylistSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24289E2B3DA5CA00EAC0CF /* PlaylistSelection.swift */; };
 		7CE5EFBB2B3DF75A006ADF0B /* Task+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE5EFBA2B3DF75A006ADF0B /* Task+Extensions.swift */; };
+		7CE5EFBE2B3DFF6A006ADF0B /* CustomPlaylistSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE5EFBD2B3DFF6A006ADF0B /* CustomPlaylistSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5DAD5337262801020005FFA1 /* Crescendo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Crescendo-Info.plist"; sourceTree = "<group>"; };
 		7C24289E2B3DA5CA00EAC0CF /* PlaylistSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistSelection.swift; sourceTree = "<group>"; };
 		7CE5EFBA2B3DF75A006ADF0B /* Task+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Extensions.swift"; sourceTree = "<group>"; };
+		7CE5EFBD2B3DFF6A006ADF0B /* CustomPlaylistSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlaylistSearch.swift; sourceTree = "<group>"; };
 		D6328558768CDFB990C0BEB1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 		7CE5EFBC2B3DF87A006ADF0B /* Custom Playlist */ = {
 			isa = PBXGroup;
 			children = (
+				7CE5EFBD2B3DFF6A006ADF0B /* CustomPlaylistSearch.swift */,
 			);
 			path = "Custom Playlist";
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE5EFBE2B3DFF6A006ADF0B /* CustomPlaylistSearch.swift in Sources */,
 				7CE5EFBB2B3DF75A006ADF0B /* Task+Extensions.swift in Sources */,
 				5D16E1CD2637FC64000AD556 /* CrescendoApp.swift in Sources */,
 				5D16E1BF2637FB69000AD556 /* ContentView.swift in Sources */,
@@ -333,7 +337,7 @@
 				INFOPLIST_FILE = "SupportingFiles/$(PRODUCT_NAME:c99extidentifier)-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Crescendo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.oliverbinns.crescendo;
 				PRODUCT_NAME = Crescendo;
@@ -354,7 +358,7 @@
 				INFOPLIST_FILE = "SupportingFiles/$(PRODUCT_NAME:c99extidentifier)-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Crescendo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.oliverbinns.crescendo;
 				PRODUCT_NAME = Crescendo;

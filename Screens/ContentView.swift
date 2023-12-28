@@ -13,15 +13,33 @@ struct ContentView: View {
         }
     }
     
+    @State private var isSelectingPlaylist: Bool = false
+    
     var body: some View {
         rootView
+            #if DEBUG
             // Display the development settings view when appropriate.
             .sheet(isPresented: $isDevelopmentSettingsViewPresented) {
                 DevelopmentSettingsView()
             }
+        #endif
+            .sheet(isPresented: $isSelectingPlaylist) {
+                CustomPlaylistSearch { playlistID in
+                    selectedPlaylist = .custom(playlistID.rawValue)
+                }
+            }
         
             // Display the welcome view when appropriate.
             .welcomeSheet()
+    }
+    
+    private var isCustomPlaylist: Bool {
+        switch selectedPlaylist {
+        case .custom(let string):
+            return true
+        default:
+            return false
+        }
     }
     
     /// The top-level content view.
@@ -53,11 +71,11 @@ struct ContentView: View {
             .buttonStyle(.prominent(isSelected: selectedPlaylist == .disney))
             
             Button {
-                print("coming soon!") // - in app purchase required!
+                isSelectingPlaylist = true // - in app purchase required!
             } label: {
                 Text("📋 Custom")
             }
-            .buttonStyle(.prominent)
+            .buttonStyle(.prominent(isSelected: isCustomPlaylist))
 
             Divider()
             
