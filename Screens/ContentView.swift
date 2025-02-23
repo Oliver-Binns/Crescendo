@@ -2,9 +2,9 @@ import MusicKit
 import SwiftUI
 
 struct ContentView: View {
-    
+
     // MARK: - View
-    
+
     @State private var isLoading: Bool = false
     @State private var isPlaying: Bool = false
     @State private var selectedPlaylist: PlaylistSelection = .party {
@@ -12,9 +12,9 @@ struct ContentView: View {
             fetchPlaylist(selectedPlaylist)
         }
     }
-    
+
     @State private var isSelectingPlaylist: Bool = false
-    
+
     var body: some View {
         rootView
             #if DEBUG
@@ -28,11 +28,11 @@ struct ContentView: View {
                     selectedPlaylist = .custom(playlistID.rawValue)
                 }
             }
-        
+
             // Display the welcome view when appropriate.
             .welcomeSheet()
     }
-    
+
     private var isCustomPlaylist: Bool {
         switch selectedPlaylist {
         case .custom(let string):
@@ -41,35 +41,35 @@ struct ContentView: View {
             return false
         }
     }
-    
+
     /// The top-level content view.
     private var rootView: some View {
         ScrollView {
             Text("Choose Playlist")
                 .font(.largeTitle)
                 .fontWeight(.black)
-            
+
             Button {
                 selectedPlaylist = .party
             } label: {
                 Text("🥳 Party")
             }
             .buttonStyle(.prominent(isSelected: selectedPlaylist == .party))
-            
+
             Button {
                 selectedPlaylist = .kids
             } label: {
                 Text("🧒 Kids")
             }
             .buttonStyle(.prominent(isSelected: selectedPlaylist == .kids))
-            
-            Button { 
+
+            Button {
                 selectedPlaylist = .disney
             } label: {
                 Text("🏰 Disney")
             }
             .buttonStyle(.prominent(isSelected: selectedPlaylist == .disney))
-            
+
             Button {
                 isSelectingPlaylist = true // - in app purchase required!
             } label: {
@@ -78,7 +78,7 @@ struct ContentView: View {
             .buttonStyle(.prominent(isSelected: isCustomPlaylist))
 
             Divider()
-            
+
             Button {
                 Task {
                     try await runMusic()
@@ -100,7 +100,7 @@ struct ContentView: View {
         .frame(maxWidth: .infinity)
         .fontDesign(.rounded)
         .background(Color.accentColor)
-        
+
         #if DEBUG
         .gesture(hiddenDevelopmentSettingsGesture)
         #endif
@@ -108,7 +108,7 @@ struct ContentView: View {
             fetchPlaylist(selectedPlaylist)
         }
     }
-    
+
     private func runMusic() async throws {
         if !isPlaying {
             isPlaying = true
@@ -118,17 +118,17 @@ struct ContentView: View {
         isPlaying = false
         ApplicationMusicPlayer.shared.pause()
     }
-    
+
     /// Makes a new search request to MusicKit when the current search term changes.
     private func fetchPlaylist(_ playlist: PlaylistSelection) {
         isLoading = true
-        
+
         Task {
             do {
                 let id = MusicItemID(rawValue: playlist.id)
                 let request = MusicCatalogResourceRequest<Playlist>(matching: \.id, equalTo: id)
                 let response = try await request.response()
-                
+
                 // Update the user interface with the search response.
                 await self.apply(response)
             } catch {
@@ -137,7 +137,7 @@ struct ContentView: View {
             }
         }
     }
-    
+
     @MainActor
     private func apply(_ response: MusicCatalogResourceResponse<Playlist>) {
         guard let playlist = response.items.first else { return }
@@ -145,13 +145,13 @@ struct ContentView: View {
         ApplicationMusicPlayer.shared.queue = [playlist]
         isLoading = false
     }
-    
+
     #if DEBUG
     // MARK: - Development settings
-    
+
     /// `true` if the content view needs to display the development settings view.
     @State var isDevelopmentSettingsViewPresented = false
-    
+
     /// A custom gesture that initiates the presentation of the development settings view.
     private var hiddenDevelopmentSettingsGesture: some Gesture {
         TapGesture(count: 3).onEnded {
