@@ -3,7 +3,7 @@ enum PlaylistSelection {
     case disney
     case party
     case custom(String)
-    
+
     var id: String {
         switch self {
         case .kids:
