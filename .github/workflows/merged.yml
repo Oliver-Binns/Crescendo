@@ -1,0 +1,53 @@
+name: Deploy new version to TestFlight
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Deploy to App Store Connect
+    runs-on: macos-15
+
+    steps:
+      - name: Add Path Globally
+        run: echo "/usr/local/bin" >> $GITHUB_PATH
+
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # pin@v4
+        with:
+          lfs: 'true'
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Increment Version
+        id: versioning
+        uses: Oliver-Binns/Versioning@3fe853c28bce81e7cfdedf3967734b785c256181 # 1.0.0
+        with:
+          ACTION_TYPE: Release
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Create Distribution P12
+        run: |
+          echo -n $CERTIFICATE_VALUE | base64 --decode -o distribution.p12
+        env:
+          CERTIFICATE_VALUE: ${{ secrets.DISTRIBUTION_CERTIFICATE }}
+
+      - name: Deploy
+        run: bundle exec fastlane deploy
+        env:
+          ISSUER_ID: "69a6de7c-2e67-47e3-e053-5b8c7c11a4d1"
+          KEY_ID: "G6483F9382"
+          KEY_VALUE: ${{ secrets.APPSTORECONNECT_APIKEY }}
+          CERTIFICATE_PASSWORD: ${{ secrets.DISTRIBUTION_PASSWORD }}
+          BUILD_NUMBER: ${{ steps.versioning.outputs.release_version }}

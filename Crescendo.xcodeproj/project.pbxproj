@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,16 @@
 		7CE5EFBE2B3DFF6A006ADF0B /* CustomPlaylistSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE5EFBD2B3DFF6A006ADF0B /* CustomPlaylistSearch.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A7825C1E2D6C8DEF00DDF2FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D56E87226278461008415EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D56E87926278461008415EB;
+			remoteInfo = Crescendo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5D16E1BA2637FB69000AD556 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		5D16E1BC2637FB69000AD556 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,11 +40,23 @@
 		7C24289E2B3DA5CA00EAC0CF /* PlaylistSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistSelection.swift; sourceTree = "<group>"; };
 		7CE5EFBA2B3DF75A006ADF0B /* Task+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Extensions.swift"; sourceTree = "<group>"; };
 		7CE5EFBD2B3DFF6A006ADF0B /* CustomPlaylistSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlaylistSearch.swift; sourceTree = "<group>"; };
+		A7825C1A2D6C8DEF00DDF2FD /* CrescendoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrescendoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6328558768CDFB990C0BEB1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A7825C1B2D6C8DEF00DDF2FD /* CrescendoTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CrescendoTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		5D56E87726278461008415EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7825C172D6C8DEF00DDF2FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -81,6 +103,7 @@
 				7CE5EFBC2B3DF87A006ADF0B /* Custom Playlist */,
 				5D16E1CE2637FD9F000AD556 /* Components */,
 				5D56E88B26278599008415EB /* Supporting Files */,
+				A7825C1B2D6C8DEF00DDF2FD /* CrescendoTests */,
 				5D56E87B26278461008415EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				5D56E87A26278461008415EB /* Crescendo.app */,
+				A7825C1A2D6C8DEF00DDF2FD /* CrescendoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,18 +163,45 @@
 			productReference = 5D56E87A26278461008415EB /* Crescendo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A7825C192D6C8DEF00DDF2FD /* CrescendoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7825C222D6C8DEF00DDF2FD /* Build configuration list for PBXNativeTarget "CrescendoTests" */;
+			buildPhases = (
+				A7825C162D6C8DEF00DDF2FD /* Sources */,
+				A7825C172D6C8DEF00DDF2FD /* Frameworks */,
+				A7825C182D6C8DEF00DDF2FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A7825C1F2D6C8DEF00DDF2FD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A7825C1B2D6C8DEF00DDF2FD /* CrescendoTests */,
+			);
+			name = CrescendoTests;
+			packageProductDependencies = (
+			);
+			productName = CrescendoTests;
+			productReference = A7825C1A2D6C8DEF00DDF2FD /* CrescendoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		5D56E87226278461008415EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					5D56E87926278461008415EB = {
 						CreatedOnToolsVersion = 13.0;
+					};
+					A7825C192D6C8DEF00DDF2FD = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 5D56E87926278461008415EB;
 					};
 				};
 			};
@@ -168,6 +219,7 @@
 			projectRoot = "";
 			targets = (
 				5D56E87926278461008415EB /* Crescendo */,
+				A7825C192D6C8DEF00DDF2FD /* CrescendoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -178,6 +230,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D56E895262785FA008415EB /* Crescendo.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7825C182D6C8DEF00DDF2FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +258,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A7825C162D6C8DEF00DDF2FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A7825C1F2D6C8DEF00DDF2FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D56E87926278461008415EB /* Crescendo */;
+			targetProxy = A7825C1E2D6C8DEF00DDF2FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5D56E88626278462008415EB /* Debug */ = {
@@ -342,6 +416,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.oliverbinns.crescendo;
 				PRODUCT_NAME = Crescendo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -363,6 +442,60 @@
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.oliverbinns.crescendo;
 				PRODUCT_NAME = Crescendo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A7825C202D6C8DEF00DDF2FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z86DH46P79;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.oliverbinns.CrescendoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Crescendo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Crescendo";
+			};
+			name = Debug;
+		};
+		A7825C212D6C8DEF00DDF2FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z86DH46P79;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.oliverbinns.CrescendoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Crescendo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Crescendo";
 			};
 			name = Release;
 		};
@@ -383,6 +516,15 @@
 			buildConfigurations = (
 				5D56E88926278462008415EB /* Debug */,
 				5D56E88A26278462008415EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7825C222D6C8DEF00DDF2FD /* Build configuration list for PBXNativeTarget "CrescendoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7825C202D6C8DEF00DDF2FD /* Debug */,
+				A7825C212D6C8DEF00DDF2FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
