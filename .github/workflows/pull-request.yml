@@ -38,5 +38,5 @@ jobs:
           
       - name: Run Automated Tests
         run: |
-          fastlane test
+          bundle exec fastlane test
 

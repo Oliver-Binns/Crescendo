@@ -41,7 +41,7 @@ jobs:
           CERTIFICATE_VALUE: ${{ secrets.DISTRIBUTION_CERTIFICATE }}
 
       - name: Deploy
-        run: fastlane deploy
+        run: bundle exec fastlane deploy
         env:
           ISSUER_ID: "69a6de7c-2e67-47e3-e053-5b8c7c11a4d1"
           KEY_ID: "G6483F9382"
