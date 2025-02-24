@@ -2,7 +2,7 @@ name: Deploy new version to TestFlight
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, ci/setup-pipelines ]
   workflow_dispatch:
 
 permissions:
