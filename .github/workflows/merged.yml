@@ -15,7 +15,7 @@ concurrency:
 jobs:
   build:
     name: Deploy to App Store Connect
-    runs-on: macos-14
+    runs-on: macos-15
 
     steps:
       - name: Add Path Globally
