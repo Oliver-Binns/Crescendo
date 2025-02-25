@@ -1,16 +1,16 @@
-default_platform(:ios)
-
-
 if is_ci
   xcode_select("/Applications/Xcode_16.2.app")
-end 
+end
 
-platform :ios do
+platform :mac do
   desc "Build and test app"
   lane :test do
+    default_platform(:mac)
     scan
   end
+end
 
+platform :ios do
   desc "Deploy to App Store Connect"
   lane :deploy do |options|
     if ENV["BUILD_NUMBER"].nil? || ENV["BUILD_NUMBER"].empty?
