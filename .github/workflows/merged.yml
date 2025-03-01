@@ -43,6 +43,10 @@ jobs:
         env:
           CERTIFICATE_VALUE: ${{ secrets.DISTRIBUTION_CERTIFICATE }}
 
+      - name: Export contact number
+        run: |
+          echo ${{ secrets.CONTACT_NUMBER }} > fastlane/metadata/review_information/phone_number.txt
+
       - name: Deploy
         run: bundle exec fastlane deploy
         env:
