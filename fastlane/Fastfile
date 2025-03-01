@@ -2,7 +2,7 @@ default_platform(:ios)
 
 
 if is_ci
-  xcode_select("/Applications/Xcode_16.2.app")
+  xcode_select("/Applications/Xcode_16.1.app")
 end 
 
 platform :ios do
